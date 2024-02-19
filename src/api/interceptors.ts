@@ -9,7 +9,7 @@ import { errorCatch } from "./error";
 // http://localhost:7000/api
 
 const options: CreateAxiosDefaults = {
-  baseURL: "https://next-akof0dljn-gnomedevreact.vercel.app",
+  baseURL: "https://next-new-nu.vercel.app/api",
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
 };
