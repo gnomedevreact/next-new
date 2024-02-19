@@ -16,7 +16,6 @@ export const ApiHelper = {
       domain: "next-new-nu.vercel.app",
       sameSite: "strict",
       expires: 1,
-      secure: true,
     });
   },
 
