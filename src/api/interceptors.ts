@@ -9,7 +9,7 @@ import { errorCatch } from "./error";
 // http://localhost:7000/api
 
 const options: CreateAxiosDefaults = {
-  baseURL: "https://nest-new.onrender.com/api",
+  baseURL: "https://next-akof0dljn-gnomedevreact.vercel.app",
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
 };
