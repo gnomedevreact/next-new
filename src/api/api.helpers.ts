@@ -11,10 +11,12 @@ export const ApiHelper = {
   },
 
   setAccessToken(accessToken: string) {
+    console.log(accessToken);
     Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
-      domain: "https://next-new-nu.vercel.app",
+      domain: "next-new-nu.vercel.app",
       sameSite: "strict",
       expires: 1,
+      secure: true,
     });
   },
 
