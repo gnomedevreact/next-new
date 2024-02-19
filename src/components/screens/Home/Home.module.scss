@@ -1,0 +1,15 @@
+.wrap {
+  @apply w-full h-full bg-gray;
+
+  > ul {
+    @apply flex flex-col;
+
+    > li {
+      @apply flex items-center justify-between p-2 pr-[20%] border-t-2 border-grayInput;
+    }
+
+    > li:last-child {
+      @apply border-b-2;
+    }
+  }
+}

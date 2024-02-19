@@ -1,0 +1,41 @@
+.wrap {
+  @apply bg-darkGray w-full h-full;
+
+  > section {
+    @apply flex items-center justify-center w-full h-full;
+
+    > div:nth-child(1) {
+      @apply flex flex-col gap-4 items-center justify-center bg-gray p-8 rounded-lg w-[30%];
+
+      > h1 {
+        @apply text-black text-[28px] font-semibold;
+      }
+
+      > form {
+        @apply flex flex-col gap-5 w-full;
+
+        > label {
+          @apply w-full;
+
+          > input {
+            @apply py-2.5 px-4 w-full bg-grayBg border-2 border-grayInput rounded-lg outline-red outline-1;
+
+            &::placeholder {
+              @apply text-textGray;
+            }
+          }
+        }
+
+        > label:nth-child(2) {
+          > input {
+            @apply mb-2;
+          }
+        }
+      }
+
+      -webkit-box-shadow: 6px 7px 5px 0px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 6px 7px 5px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: 6px 7px 5px 0px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
