@@ -12,8 +12,8 @@ export const ApiHelper = {
 
   setAccessToken(accessToken: string) {
     Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
-      domain: "https://nest-new.onrender.com",
-      sameSite: "Strict",
+      domain: "https://next-new-nu.vercel.app",
+      sameSite: "strict",
       expires: 1,
     });
   },
