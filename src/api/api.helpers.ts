@@ -12,7 +12,7 @@ export const ApiHelper = {
 
   setAccessToken(accessToken: string) {
     Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
-      domain: "localhost",
+      domain: "https://nest-new.onrender.com/api",
       sameSite: "Strict",
       expires: 1,
     });

@@ -5,11 +5,11 @@ import { AuthService } from "@/services/auth.service";
 import { ApiHelper } from "./api.helpers";
 import { errorCatch } from "./error";
 
-// https://nest-new.onrender.com
+// https://nest-new.onrender.com/api
 // http://localhost:7000/api
 
 const options: CreateAxiosDefaults = {
-  baseURL: "https://nest-new.onrender.com",
+  baseURL: "https://nest-new.onrender.com/api",
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
 };

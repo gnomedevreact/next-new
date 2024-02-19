@@ -109,7 +109,9 @@ export const Auth = () => {
                 Continue
               </Button>
               <GoogleButton
-                onClick={() => replace("http://localhost:7000/api/auth/google")}
+                onClick={() =>
+                  replace("http://nest-new.onrender.com/api/auth/google")
+                }
               />
               <div className="w-full flex items-end justify-end py-2">
                 <span

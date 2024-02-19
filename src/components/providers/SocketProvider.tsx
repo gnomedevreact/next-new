@@ -30,7 +30,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
       setRooms(rooms);
       const roomIds = rooms.map((room) => room.id);
 
-      const newSocket = io("ws://localhost:7000");
+      const newSocket = io("ws://nest-new.onrender.com");
 
       newSocket.on("connect", () => {
         console.log("connected");

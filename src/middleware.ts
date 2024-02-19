@@ -9,7 +9,7 @@ export async function middleware(request: NextRequest) {
   if (path.startsWith("/admin")) {
     const acccessToken = request.cookies.get(EnumTokens.ACCESS_TOKEN)?.value;
 
-    const req = await fetch("http://localhost:7000/api/users/by-id", {
+    const req = await fetch("https://nest-new.onrender.com/api/users/by-id", {
       method: "GET",
       headers: new Headers({
         Authorization: `Bearer ${acccessToken}`,
