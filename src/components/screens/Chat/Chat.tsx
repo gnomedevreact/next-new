@@ -28,21 +28,6 @@ export const Chat = ({ id }: { id: string }) => {
     }
   }, [room]);
 
-  // useEffect(() => {
-  //   console.log(socket);
-  //   if (socket) {
-  //     socket?.on("message", (data) => {
-  //       console.log(data);
-  //       const new_storage_messages = storage_rooms.map((stRoom) => {
-  //         if (stRoom.id === data.roomId) {
-  //           return { ...stRoom, messages: [...stRoom.messages, data] };
-  //         }
-  //         return stRoom;
-  //       });
-  //     });
-  //   }
-  // }, [socket]);
-
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
@@ -63,11 +48,25 @@ export const Chat = ({ id }: { id: string }) => {
 
   return (
     <div>
-      <ul>
+      <ul className={"flex flex-col max-h-[1000px] overflow-y-auto p-8"}>
         {messages &&
-          messages.map((message, index) => (
-            <li key={index}>{message.message}</li>
-          ))}
+          messages.map((message, index) =>
+            message.from_id === user?.id ? (
+              <li
+                className={"bg-blue-400 text-white w-[100px] p-4 self-end"}
+                key={index}
+              >
+                {message.message}
+              </li>
+            ) : (
+              <li
+                className={"bg-textGray text-white w-[100px] p-4 self-start"}
+                key={index}
+              >
+                {message.message}
+              </li>
+            )
+          )}
       </ul>
       <form>
         <input type="text" value={value} onChange={onChange} />
