@@ -108,11 +108,11 @@ export const Auth = () => {
               >
                 Continue
               </Button>
-              <GoogleButton
+              {/* <GoogleButton
                 onClick={() =>
                   replace("http://nest-new.onrender.com/api/auth/google")
                 }
-              />
+              /> */}
               <div className="w-full flex items-end justify-end py-2">
                 <span
                   className="cursor-pointer"
