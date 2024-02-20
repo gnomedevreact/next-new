@@ -26,6 +26,8 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
   const storage_rooms = useRoomsMessagesStore((state) => state.rooms);
   const setRooms = useRoomsMessagesStore((state) => state.setRooms);
 
+  console.log(pathname);
+
   useEffect(() => {
     if (!isLoading && rooms) {
       console.log(rooms);
