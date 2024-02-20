@@ -58,15 +58,19 @@ export const Home = () => {
               >
                 {`${user.isAdmin}`}
               </span>
-              <Button
-                onClick={() =>
-                  socket?.emit("create-room", {
-                    userIds: [user.id, currentUser.id],
-                  })
-                }
-              >
-                Message
-              </Button>
+              {rooms.filter((room) =>
+                room.users.filter((userr) => userr.id === user.id)
+              ).length > 0 ? null : (
+                <Button
+                  onClick={() =>
+                    socket?.emit("create-room", {
+                      userIds: [user.id, currentUser.id],
+                    })
+                  }
+                >
+                  Message
+                </Button>
+              )}
             </li>
           ))}
       </ul>
