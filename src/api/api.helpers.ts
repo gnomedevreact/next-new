@@ -20,7 +20,11 @@ export const ApiHelper = {
   },
 
   removeAccessToken() {
-    Cookies.remove(EnumTokens.ACCESS_TOKEN);
+    Cookies.remove(EnumTokens.ACCESS_TOKEN, {
+      domain: process.env.APP_URL,
+      sameSite: "strict",
+      expires: 1,
+    });
   },
 
   getUser() {
