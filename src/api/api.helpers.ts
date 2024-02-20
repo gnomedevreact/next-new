@@ -13,7 +13,7 @@ export const ApiHelper = {
   setAccessToken(accessToken: string) {
     console.log(accessToken);
     Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
-      domain: "next-new-nu.vercel.app",
+      domain: process.env.APP_URL,
       sameSite: "strict",
       expires: 1,
     });

@@ -4,6 +4,7 @@ import cl from "classnames";
 import { useRouter } from "next/navigation";
 
 import { ApiHelper } from "@/api/api.helpers";
+import { useSocket } from "@/components/providers/SocketProvider";
 import { useAuthMutations } from "@/hooks/useAuthMutations";
 import { useChat } from "@/hooks/useChat";
 import { useCreateRoom } from "@/hooks/useCreateRoom";
@@ -18,8 +19,8 @@ export const Home = () => {
   const { mutateLogout, isPendingLogout } = useAuthMutations();
   const { data: users, isLoading, error } = useGetUsers();
   const rooms = useRoomsMessagesStore((state) => state.rooms);
-  const { createRoom } = useCreateRoom();
   const currentUser = ApiHelper.getUser();
+  const { socket } = useSocket();
 
   console.log(currentUser);
 
@@ -59,7 +60,9 @@ export const Home = () => {
               </span>
               <Button
                 onClick={() =>
-                  createRoom({ userIds: [user.id, currentUser?.id] })
+                  socket?.emit("create-room", {
+                    userIds: [user.id, currentUser.id],
+                  })
                 }
               >
                 Message
@@ -70,7 +73,9 @@ export const Home = () => {
       <ul>
         {rooms.map((room) => (
           <li key={room.id} className={"bg-slate-950 text-white"}>
-            {room.messages[room.messages.length - 1].message}
+            {room.messages[room.messages.length - 1]
+              ? room.messages[room.messages.length - 1].message
+              : ""}
             <Button onClick={() => push(`/chat/${room.id}`)}>Message</Button>
           </li>
         ))}

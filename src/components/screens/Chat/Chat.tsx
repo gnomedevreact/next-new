@@ -18,13 +18,6 @@ export const Chat = ({ id }: { id: string }) => {
   const user = ApiHelper.getUser();
 
   useEffect(() => {
-    document.body.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth",
-    });
-  }, []);
-
-  useEffect(() => {
     if (room) {
       setMessages(room.messages);
       console.log(room);

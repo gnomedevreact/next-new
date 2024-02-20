@@ -5,8 +5,10 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { io, Socket } from "socket.io-client";
 import { toast } from "sonner";
 
+import { ApiHelper } from "@/api/api.helpers";
 import { useChat } from "@/hooks/useChat";
 import { useRoomsMessagesStore } from "@/store/store";
+import { IRoomResponse } from "@/types/user.types";
 import { useQueryClient } from "@tanstack/react-query";
 
 interface SocketContextType {
@@ -30,7 +32,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
       setRooms(rooms);
       const roomIds = rooms.map((room) => room.id);
 
-      const newSocket = io("wss://nest-new.onrender.com");
+      const newSocket = io("wss://next-new-nu.vercel.app");
 
       newSocket.on("connect", () => {
         console.log("connected");
@@ -49,6 +51,8 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (socket) {
+      const user = ApiHelper.getUser();
+
       socket.on("message", (data) => {
         const new_storage_messages = storage_rooms.map((stRoom) => {
           if (stRoom.id === data.roomId) {
@@ -59,6 +63,23 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
         setRooms(new_storage_messages);
         console.log(storage_rooms);
         toast.info(data.message);
+      });
+
+      socket.on("join-call", (data: IRoomResponse | any) => {
+        console.log(data);
+        if (data.users.includes(user?.id)) {
+          const newData = {
+            id: data.id,
+            messages: data.messages,
+            users: data.users.map((user: string) => ({ id: user })),
+          };
+
+          const newStorage = [...storage_rooms, newData];
+          setRooms([...storage_rooms, newData]);
+          const roomIds = newStorage.map((room) => room.id);
+          console.log(roomIds);
+          socket.emit("join-room", { roomIds });
+        }
       });
     }
   }, [socket, storage_rooms]);

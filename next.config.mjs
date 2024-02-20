@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+  env: {
+    APP_URL: process.env.APP_HOST,
+    BACK_URL: process.env.BACK_HOST,
+  },
   async rewrites() {
     return [
       {
