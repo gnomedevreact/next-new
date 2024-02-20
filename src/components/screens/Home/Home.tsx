@@ -31,11 +31,7 @@ export const Home = () => {
   return (
     <main className={styles.wrap}>
       <div className={"w-full flex items-end justify-end p-4"}>
-        <Button
-          classNames={"w-[10%]"}
-          onClick={mutateLogout}
-          disabled={isPendingLogout}
-        >
+        <Button onClick={mutateLogout} disabled={isPendingLogout}>
           Logout
         </Button>
       </div>
