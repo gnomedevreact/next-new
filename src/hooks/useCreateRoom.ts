@@ -6,7 +6,7 @@ import { useMutation } from "@tanstack/react-query";
 export const useCreateRoom = () => {
   const { push } = useRouter();
 
-  const {} = useMutation({
+  const { mutate: createRoom } = useMutation({
     mutationKey: ["create room"],
     mutationFn: (data: { userIds: string[] }) =>
       UsersService.createOrGetRoom(data),
@@ -14,4 +14,6 @@ export const useCreateRoom = () => {
       push(`/chat/${data.id}`);
     },
   });
+
+  return { createRoom };
 };
