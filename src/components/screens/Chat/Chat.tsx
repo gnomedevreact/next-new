@@ -18,8 +18,11 @@ export const Chat = ({ id }: { id: string }) => {
   const user = ApiHelper.getUser();
 
   useEffect(() => {
-    console.log(rooms);
-  }, [rooms]);
+    document.body.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  }, []);
 
   useEffect(() => {
     if (room) {
@@ -48,19 +51,19 @@ export const Chat = ({ id }: { id: string }) => {
 
   return (
     <div>
-      <ul className={"flex flex-col max-h-[1000px] overflow-y-auto p-8"}>
+      <ul className={"flex flex-col max-h-[500px] overflow-y-auto p-8"}>
         {messages &&
           messages.map((message, index) =>
             message.from_id === user?.id ? (
               <li
-                className={"bg-blue-400 text-white w-[100px] p-4 self-end"}
+                className={"bg-blue-400 text-white w-fit p-4 self-end"}
                 key={index}
               >
                 {message.message}
               </li>
             ) : (
               <li
-                className={"bg-textGray text-white w-[100px] p-4 self-start"}
+                className={"bg-textGray text-white w-fit p-4 self-start"}
                 key={index}
               >
                 {message.message}
