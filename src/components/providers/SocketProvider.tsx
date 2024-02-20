@@ -32,7 +32,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
       setRooms(rooms);
       const roomIds = rooms.map((room) => room.id);
 
-      const newSocket = io("wss://next-new-nu.vercel.app");
+      const newSocket = io("wss://nest-new.onrender.com");
 
       newSocket.on("connect", () => {
         console.log("connected");
