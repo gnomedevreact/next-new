@@ -29,7 +29,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
   console.log(pathname);
 
   useEffect(() => {
-    if (!isLoading && rooms && pathname === "/" && !socket?.connected) {
+    if (!isLoading && rooms) {
       console.log(rooms);
       setRooms(rooms);
       const roomIds = rooms.map((room) => room.id);
@@ -49,7 +49,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
         newSocket.disconnect();
       };
     }
-  }, [isLoading, pathname, socket]);
+  }, [isLoading]);
 
   useEffect(() => {
     if (socket) {
