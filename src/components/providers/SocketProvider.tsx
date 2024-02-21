@@ -27,9 +27,10 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
   const setRooms = useRoomsMessagesStore((state) => state.setRooms);
 
   console.log(pathname);
+  console.log(socket?.connected, "connection of socket");
 
   useEffect(() => {
-    if (!isLoading && rooms) {
+    if (!isLoading && rooms && pathname === "/") {
       console.log(rooms);
       setRooms(rooms);
       const roomIds = rooms.map((room) => room.id);
