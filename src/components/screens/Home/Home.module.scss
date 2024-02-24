@@ -25,7 +25,7 @@
 @media (max-width: 1200px) {
   .wrap {
     .main {
-      @apply flex-col overflow-y-auto;
+      @apply flex-col bg-transparent;
 
       > div:nth-child(1) {
         @apply w-full;

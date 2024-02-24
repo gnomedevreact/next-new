@@ -17,6 +17,9 @@ dependencies:
   classnames:
     specifier: ^2.5.1
     version: 2.5.1
+  compressorjs:
+    specifier: ^1.2.1
+    version: 1.2.1
   js-cookie:
     specifier: ^3.0.5
     version: 3.0.5
@@ -406,6 +409,10 @@ packages:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
 
+  /blueimp-canvas-to-blob@3.29.0:
+    resolution: {integrity: sha512-0pcSSGxC0QxT+yVkivxIqW0Y4VlO2XSDPofBAqoJ1qJxgH9eiUDLv50Rixij2cDuEfx4M6DpD9UGZpRhT5Q8qg==}
+    dev: false
+
   /brace-expansion@2.0.1:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
     dependencies:
@@ -488,6 +495,13 @@ packages:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
     engines: {node: '>= 6'}
     dev: true
+
+  /compressorjs@1.2.1:
+    resolution: {integrity: sha512-+geIjeRnPhQ+LLvvA7wxBQE5ddeLU7pJ3FsKFWirDw6veY3s9iLxAQEw7lXGHnhCJvBujEQWuNnGzZcvCvdkLQ==}
+    dependencies:
+      blueimp-canvas-to-blob: 3.29.0
+      is-blob: 2.1.0
+    dev: false
 
   /cookie@0.4.2:
     resolution: {integrity: sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==}
@@ -715,6 +729,11 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       binary-extensions: 2.2.0
+
+  /is-blob@2.1.0:
+    resolution: {integrity: sha512-SZ/fTft5eUhQM6oF/ZaASFDEdbFVe89Imltn9uZr03wdKMcWNVYSMjQPFtg05QuNkt5l5c135ElvXEQG0rk4tw==}
+    engines: {node: '>=6'}
+    dev: false
 
   /is-core-module@2.13.1:
     resolution: {integrity: sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw==}
