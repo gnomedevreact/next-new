@@ -6,12 +6,13 @@ import { useSocket } from "@/components/providers/SocketProvider";
 import { AuthService } from "@/services/auth.service";
 import { useRoomsMessagesStore } from "@/store/store";
 import { IFormData } from "@/types/auth.types";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export const useAuthMutations = () => {
   const { replace } = useRouter();
   const { socket } = useSocket();
   const setRooms = useRoomsMessagesStore((state) => state.setRooms);
+  const queryClient = useQueryClient();
 
   const {
     mutate: mutateLogin,
@@ -75,6 +76,7 @@ export const useAuthMutations = () => {
       ApiHelper.removeUser();
       setRooms([]);
       socket?.disconnect();
+      // queryClient.invalidateQueries();
       replace("/auth");
     },
   });

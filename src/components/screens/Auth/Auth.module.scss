@@ -1,14 +1,14 @@
 .wrap {
-  @apply bg-darkGray w-full h-full;
+  @apply bg-grayBg w-full h-full;
 
   > section {
     @apply flex items-center justify-center w-full h-full;
 
     > div:nth-child(1) {
-      @apply flex flex-col gap-4 items-center justify-center bg-gray p-8 rounded-lg w-[30%];
+      @apply flex flex-col gap-4 items-center justify-center bg-lightGray p-8 rounded-lg w-[30%];
 
       > h1 {
-        @apply text-black text-[28px] font-semibold;
+        @apply text-white text-[28px] font-semibold;
       }
 
       > form {
@@ -18,7 +18,7 @@
           @apply w-full;
 
           > input {
-            @apply py-2.5 px-4 w-full bg-grayBg border-2 border-grayInput rounded-lg outline-red outline-1;
+            @apply py-2.5 px-4 w-full bg-grayBg border-2 border-grayInput rounded-lg outline-blue outline-1;
 
             &::placeholder {
               @apply text-textGray;

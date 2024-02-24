@@ -1,0 +1,33 @@
+.side {
+  @apply relative flex flex-col justify-center items-center h-full px-10;
+
+  > ul {
+    @apply flex flex-col items-center justify-center gap-[30px];
+
+    > li {
+      @apply cursor-pointer;
+    }
+
+    .blueC {
+      @apply text-blue;
+    }
+  }
+
+  > button {
+    @apply absolute bottom-10 w-[80%];
+  }
+}
+
+@media (max-width: 1200px) {
+  .side {
+    @apply flex-row w-full justify-between py-4;
+
+    > ul {
+      @apply flex-row;
+    }
+
+    > button {
+      @apply static w-[30%];
+    }
+  }
+}

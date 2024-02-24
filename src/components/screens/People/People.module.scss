@@ -1,0 +1,23 @@
+.wrap {
+  @apply flex items-center w-full h-full;
+
+  .main {
+    @apply flex flex-col gap-[30px] w-full h-full bg-grayBg rounded-[30px] p-8 overflow-y-auto;
+
+    > h1 {
+      @apply text-[45px] font-bold;
+    }
+
+    > div {
+      @apply flex items-center p-5 bg-lightGray rounded-xl;
+
+      > div {
+        @apply flex items-center gap-2.5 mr-auto;
+
+        > img {
+          @apply rounded-2xl;
+        }
+      }
+    }
+  }
+}

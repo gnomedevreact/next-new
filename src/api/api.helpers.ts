@@ -11,7 +11,6 @@ export const ApiHelper = {
   },
 
   setAccessToken(accessToken: string) {
-    console.log(accessToken);
     Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
       domain: process.env.APP_URL,
       sameSite: "strict",

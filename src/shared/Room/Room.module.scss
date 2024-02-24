@@ -1,0 +1,17 @@
+.room {
+  @apply flex items-center gap-5 p-5 rounded-xl cursor-pointer;
+
+  > div {
+    @apply flex flex-col gap-1;
+    max-width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    > p {
+      @apply leading-5;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

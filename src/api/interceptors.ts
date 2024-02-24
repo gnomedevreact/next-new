@@ -6,7 +6,7 @@ import { ApiHelper } from "./api.helpers";
 import { errorCatch } from "./error";
 
 const options: CreateAxiosDefaults = {
-  baseURL: `https://next-new-nu.vercel.app/api`,
+  baseURL: `${process.env.BACK_URL}`,
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
 };

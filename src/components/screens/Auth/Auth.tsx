@@ -37,7 +37,6 @@ export const Auth = () => {
   const [isLogin, setIsLogin] = useState(false);
 
   const onSubmit = (data: IFormData) => {
-    console.log(data);
     isLogin ? mutateLogin(data) : mutateRegister(data);
     reset();
   };
@@ -64,7 +63,7 @@ export const Auth = () => {
                 })}
               />
               {errors.email?.message && (
-                <span className={"text-black"}>{errors.email.message}</span>
+                <span className={"text-red"}>{errors.email.message}</span>
               )}
             </label>
             <label>
@@ -89,12 +88,12 @@ export const Auth = () => {
                 })}
               />
               {errors.password?.message && (
-                <span className={"text-black"}>{errors.password.message}</span>
+                <span className={"text-red"}>{errors.password.message}</span>
               )}
             </label>
             <div>
               <div
-                className={"w-full flex items-center justify-center text-black"}
+                className={"w-full flex items-center justify-center text-red"}
               >
                 {isLogin && errorLogin ? (
                   <span>{errorCatch(errorLogin)}</span>

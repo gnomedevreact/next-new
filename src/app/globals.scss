@@ -12,7 +12,7 @@
 }
 body,
 html {
-  @apply bg-gray;
+  @apply bg-black text-white;
   height: 100%;
 }
 body {
@@ -45,4 +45,35 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+.globalSection {
+  @apply flex items-center w-full h-full;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-lightGray rounded-lg;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply rounded-lg;
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (max-width: 1200px) {
+  .globalSection {
+    @apply flex-col;
+  }
 }

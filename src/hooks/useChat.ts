@@ -10,7 +10,7 @@ export const useChat = () => {
     queryKey: ["get rooms"],
     queryFn: () => UsersService.getUserRooms(),
     select: ({ data }) => data,
-    enabled: pathname === "/",
+    enabled: pathname !== "/auth",
   });
 
   return { rooms, isLoading };

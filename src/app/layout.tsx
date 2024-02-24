@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 
 import { Provider } from "@/components/providers/Provider";
 import { SocketProvider } from "@/components/providers/SocketProvider";
+import { SideBar } from "@/shared/SideBar/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,8 +24,13 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning={true} className={inter.className}>
         <Provider>
-          <Toaster richColors position="top-right" duration={1500} />
-          <SocketProvider>{children}</SocketProvider>
+          <SocketProvider>
+            <section className={"globalSection"}>
+              <SideBar />
+              <Toaster richColors position="top-right" duration={1500} />
+              {children}
+            </section>
+          </SocketProvider>
         </Provider>
       </body>
     </html>

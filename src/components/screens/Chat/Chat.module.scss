@@ -1,0 +1,39 @@
+.form {
+  @apply flex items-center w-full p-10;
+
+  > input:first-child {
+    @apply hidden;
+  }
+
+  > input:nth-child(3) {
+    @apply w-full bg-transparent outline-none;
+  }
+}
+
+.message {
+  @apply flex items-end gap-3 w-fit;
+
+  > img {
+    @apply rounded-2xl;
+  }
+
+  > div {
+    @apply w-fit p-4 rounded-2xl;
+  }
+}
+
+.ownMessage {
+  @apply self-end;
+
+  > div {
+    @apply bg-blue;
+  }
+}
+
+.difMessage {
+  @apply self-start;
+
+  > div {
+    @apply bg-lightGray;
+  }
+}
