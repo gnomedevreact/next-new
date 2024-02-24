@@ -22,7 +22,7 @@ export const Message = ({ message, own, image }: IMessage) => {
       {!image && <div>{message}</div>}
       {image && (
         <div>
-          <img src={message} alt="image-message" className={"max-w-[500px]"} />
+          <img src={message} alt="image-message" />
         </div>
       )}
       {own && <Image src={avatar} width={50} height={50} alt="avatar" />}
